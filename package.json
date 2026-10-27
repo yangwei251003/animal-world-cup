@@ -1,0 +1,61 @@
+{
+  "name": "animal-cup",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node script/clean.mjs .next && next dev -p 13000",
+    "lan": "node script/lan-server.mjs",
+    "dev:lan": "node script/clean.mjs .next && node script/lan-dev.mjs",
+    "online": "node script/online-server.mjs",
+    "dev:online": "node script/clean.mjs .next && node script/online-dev.mjs",
+    "test:online": "node script/verify-online-relay.mjs",
+    "test:online:browser": "node script/verify-online-browser.mjs",
+    "deploy:online": "wrangler deploy -c wrangler-online.toml",
+    "prebuild": "node script/clean.mjs .next",
+    "build": "node script/stamp-sw-version.mjs && node script/safe-build.mjs",
+    "build:worker": "node script/clean.mjs .next .open-next && node script/stamp-sw-version.mjs && opennextjs-cloudflare build",
+    "start": "next start -p 13000",
+    "build:pages": "node script/package-pages.mjs",
+    "check:pages": "node script/check-pages.mjs"
+  },
+  "dependencies": {
+    "next": "15.5.28",
+    "qrcode": "^1.5.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261026.1",
+    "@opennextjs/cloudflare": "^1.20.2",
+    "@types/react": "19.2.17",
+    "playwright-core": "^1.61.1",
+    "sharp": "^0.35.5",
+    "typescript": "5.8.2",
+    "wrangler": "^4.148.0",
+    "ws": "^8.21.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "esbuild",
+      "workerd"
+    ],
+    "overrides": {
+      "postcss": "8.5.23",
+      "source-map-js": "1.2.2",
+      "nanoid@^3": "3.3.18",
+      "brace-expansion@^2": "2.1.7",
+      "brace-expansion@^5": "5.0.12",
+      "body-parser@^2": "2.4.0",
+      "proxy-addr": "2.0.8",
+      "qs": "6.16.0",
+      "form-data@^4": "4.0.6",
+      "undici@^7": "7.30.1",
+      "esbuild": "0.28.1",
+      "sharp": "0.35.5",
+      "ws": "8.22.0",
+      "glob@^10": "10.5.0"
+    }
+  }
+}

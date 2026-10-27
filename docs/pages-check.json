@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-26T09:56:16.729Z",
+  "prefix": "/animal-world-cup/",
+  "engineStarted": true,
+  "canvasCount": 3,
+  "samples": [
+    {
+      "time": 0.6166666666666669
+    },
+    {
+      "time": 2.116666666666664
+    }
+  ],
+  "pageErrors": [],
+  "httpFailures": [],
+  "externalRequests": [],
+  "scope": "Actual original single-machine AI match engine; multiplayer/server routes not exercised."
+}
